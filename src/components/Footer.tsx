@@ -45,7 +45,7 @@ const socialLinks = [
   { name: "Instagram", icon: Instagram, href: "https://instagram.com/sportynix" },
   { name: "Facebook", icon: Facebook, href: "https://facebook.com/sportynix" },
   { name: "YouTube", icon: Youtube, href: "https://youtube.com/sportynix" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/sportynix" }
+  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/webxkey" }
 ];
 
 export default function Footer() {
@@ -203,7 +203,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-6">
               <span className="text-sm text-gray-500">
-                Made with ❤️ for Sri Lanken 
+                Made with ❤️ for Sri Lankan
               </span>
             </div>
           </div>
