@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sportynix.app"),
+  metadataBase: new URL("https://sportynix.com"),
   title: {
     default: "Sportynix - Indoor Venue Booking & League Management",
     template: "%s | Sportynix",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sportynix.app",
+    url: "https://sportynix.com",
     siteName: "Sportynix",
     title: "Sportynix - Indoor Venue Booking & Leagues",
     description:
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     google: "google-site-verification-code",
   },
   alternates: {
-    canonical: "https://sportynix.app",
+    canonical: "https://sportynix.com",
   },
 };
 
@@ -77,7 +77,7 @@ export default function RootLayout({
       <head>
         {/* Prefer user-provided site icon (siteicon.svg) if present, fall back to favicon.svg */}
         <link rel="icon" href="images/siteicon.svg" type="image/svg+xml" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="images/siteicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#0F172A" />
       </head>
