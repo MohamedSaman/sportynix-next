@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckCircle2, AlertCircle, Clock, Activity, Server, Smartphone, Globe, Database } from "lucide-react";
@@ -63,6 +64,14 @@ const getStatusBg = (status: string) => {
 
 export default function StatusPage() {
   const allOperational = services.every(s => s.status === "operational");
+  const [uptimeBars] = useState(() => 
+    Array.from({ length: 90 }).map(() => {
+      const r = Math.random();
+      const bg = r > 0.02 ? 'bg-[var(--brand-secondary)]' : 'bg-yellow-400';
+      const height = `${80 + Math.random() * 20}%`;
+      return { bg, height };
+    })
+  );
 
   return (
     <>
@@ -141,15 +150,11 @@ export default function StatusPage() {
             <h2 className="text-2xl font-bold mb-8">90-Day Uptime</h2>
             <div className="p-6 rounded-2xl glass">
               <div className="flex items-end gap-1 h-24">
-                {[...Array(90)].map((_, i) => (
+                {uptimeBars.map((bar, i) => (
                   <div
                     key={i}
-                    className={`flex-1 rounded-sm ${
-                      Math.random() > 0.02 
-                        ? 'bg-[var(--brand-secondary)]' 
-                        : 'bg-yellow-400'
-                    }`}
-                    style={{ height: `${80 + Math.random() * 20}%` }}
+                    className={`flex-1 rounded-sm ${bar.bg}`}
+                    style={{ height: bar.height }}
                   />
                 ))}
               </div>
