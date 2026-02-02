@@ -44,7 +44,7 @@ export const metadata: Metadata = {
       "Find and book indoor venues, manage leagues, and keep scores in real-time.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://sportynix.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Sportynix App Preview",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "Sportynix - Indoor Venue Booking & Leagues",
     description:
       "Find and book indoor venues, manage leagues, and keep scores in real-time.",
-    images: ["/og-image.png"],
+    images: ["https://sportynix.com/og-image.png"],
     creator: "@sportynix",
   },
   verification: {
@@ -75,10 +75,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* Prefer user-provided site icon (siteicon.svg) if present, fall back to favicon.svg */}
-        <link rel="icon" href="images/siteicon.svg" type="image/svg+xml" />
-        <link rel="icon" href="images/siteicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Favicons and touch icons (serve from /public) */}
+        <link rel="icon" href="/siteicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/siteicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/siteicon.png" />
+        {/* Explicit OG/Twitter image metas to help scrapers fetch the correct preview image */}
+        <meta property="og:image" content="https://sportynix.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://sportynix.com/og-image.png" />
         <meta name="theme-color" content="#0F172A" />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
