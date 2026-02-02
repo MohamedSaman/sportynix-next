@@ -75,6 +75,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Prefer user-provided site icon (siteicon.svg) if present, fall back to favicon.svg */}
+        <link rel="icon" href="images/siteicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#0F172A" />
