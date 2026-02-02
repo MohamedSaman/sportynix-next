@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { Menu, X, Download } from "lucide-react";
 
 const navLinks = [
@@ -18,6 +19,7 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,50 +115,56 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden glass border-t border-white/10"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden glass fixed inset-x-0 top-16 bottom-0 z-40 border-t border-white/10"
           >
-            <div className="px-4 py-6 space-y-4">
-              {navLinks.map((link, index) => (
-                link.href.startsWith('/') ? (
-                  <Link key={link.name} href={link.href} onClick={() => setIsMobileMenuOpen(false)}>
-                    <motion.span
+            <div className="px-4 py-6 h-full overflow-auto">
+              <div className="flex flex-col gap-6">
+                {navLinks.map((link, index) => {
+                  const isActive = link.href.startsWith('/') && pathname === link.href;
+                  const commonClasses = `block text-lg font-medium transition-colors ${isActive ? 'text-[var(--brand-primary)]' : 'text-gray-300 hover:text-[var(--brand-primary)]'}`;
+
+                  return link.href.startsWith('/') ? (
+                    <Link key={link.name} href={link.href} onClick={() => setIsMobileMenuOpen(false)}>
+                      <motion.span
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.06 }}
+                        className={commonClasses}
+                      >
+                        {link.name}
+                      </motion.span>
+                    </Link>
+                  ) : (
+                    <motion.a
+                      key={link.name}
+                      href={link.href}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="block text-lg font-medium text-gray-300 hover:text-[var(--brand-primary)] transition-colors"
+                      transition={{ delay: index * 0.06 }}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={commonClasses}
                     >
                       {link.name}
-                    </motion.span>
-                  </Link>
-                ) : (
-                  <motion.a
-                    key={link.name}
-                    href={link.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-lg font-medium text-gray-300 hover:text-[var(--brand-primary)] transition-colors"
-                  >
-                    {link.name}
-                  </motion.a>
-                )
-              ))}
-              <motion.a
-                href="#download"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--brand-primary)] text-[#0F172A] font-semibold text-sm w-full justify-center mt-4"
-              >
-                <Download className="w-4 h-4" />
-                Download App
-              </motion.a>
+                    </motion.a>
+                  );
+                })}
+
+                <motion.a
+                  href="#download"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2 }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--brand-primary)] text-[#0F172A] font-semibold text-sm w-full justify-center mt-4"
+                >
+                  <Download className="w-4 h-4" />
+                  Download App
+                </motion.a>
+              </div>
             </div>
           </motion.div>
         )}

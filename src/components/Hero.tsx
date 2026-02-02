@@ -21,7 +21,7 @@ import {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-radial pt-20">
+    <section className="relative min-h-[80vh] lg:min-h-screen flex items-center lg:items-start justify-center overflow-hidden bg-gradient-radial pt-12 sm:pt-16 lg:pt-20">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Gradient Orbs */}
@@ -49,14 +49,14 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-8 items-center lg:items-start">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left self-center lg:self-start"
           >
             {/* Badge */}
             <motion.div
@@ -76,7 +76,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
+              className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] mb-4 lg:mb-6"
             >
               Book Courts. Play.{" "}
                 <span className="text-gradient">Compete</span>
@@ -87,7 +87,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg sm:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8"
+              className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-xl lg:mx-0 mb-6 lg:mb-8"
             >
               Find and book indoor venues near you, create leagues and teams,
               and track live scores and bookings — all in one app.
@@ -107,7 +107,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-wrap justify-center lg:justify-start gap-8 mt-10"
+              className="flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-8 mt-6 lg:mt-10"
             >
               {[
                 { value: "5K+", label: "Active Players" },
