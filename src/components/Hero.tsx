@@ -110,7 +110,7 @@ export default function Hero() {
               className="flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-8 mt-6 lg:mt-10"
             >
               {[
-                { value: "5K+", label: "Active Players" },
+                { value: "1K+", label: "Active Players" },
                 { value: "4.9", label: "App Rating" },
                 { value: "100+", label: "Venues Listed" },
               ].map((stat, index) => (
@@ -174,8 +174,8 @@ export default function Hero() {
                       <div className="flex items-center justify-between px-4 py-2">
                         <div className="flex items-center gap-2">
                           <img 
-                            src="/images/logo.png" 
-                            alt="Sportynix" 
+                            src="/images/logo.png"
+                            alt="Sportynix"
                             className="h-10 w-auto"
                           />
                         </div>

@@ -244,9 +244,9 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
               {[
-                { value: "10K+", label: "Active Users" },
-                { value: "500+", label: "Partner Venues" },
-                { value: "50K+", label: "Bookings Made" },
+                { value: "1K+", label: "Active Users" },
+                { value: "50+", label: "Partner Venues" },
+                { value: "10K+", label: "Bookings Made" },
                 { value: "4.8", label: "App Rating" }
               ].map((stat, index) => (
                 <motion.div

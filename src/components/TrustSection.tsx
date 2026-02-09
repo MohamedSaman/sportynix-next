@@ -7,14 +7,14 @@ import { Users, Download, Star, Trophy } from "lucide-react";
 const stats = [
   {
     icon: Users,
-    value: 50000,
+    value: 1000,
     suffix: "+",
     label: "Active Players",
     color: "var(--brand-primary)"
   },
   {
     icon: Download,
-    value: 100000,
+    value: 1000,
     suffix: "+",
     label: "App Downloads",
     color: "var(--brand-secondary)"
@@ -29,7 +29,7 @@ const stats = [
   },
   {
     icon: Trophy,
-    value: 250000,
+    value: 25000,
     suffix: "+",
     label: "Bookings Completed",
     color: "var(--brand-accent)"

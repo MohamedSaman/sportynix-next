@@ -97,11 +97,11 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <a 
-                href="mailto:hello@sportynix.app"
+                href="mailto:hello@sportynix.com"
                 className="flex items-center gap-2 text-sm text-gray-400 hover:text-[var(--brand-primary)] transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                info@sportynix.app
+                info@sportynix.com
               </a>
               <p className="flex items-center gap-2 text-sm text-gray-400">
                 <MapPin className="w-4 h-4" />

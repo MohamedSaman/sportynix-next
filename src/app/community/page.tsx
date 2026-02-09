@@ -7,8 +7,8 @@ import Footer from "@/components/Footer";
 import { Users, MessageSquare, Trophy, Calendar, ArrowRight, ExternalLink } from "lucide-react";
 
 const communityStats = [
-  { icon: Users, value: "50K+", label: "Community Members" },
-  { icon: MessageSquare, value: "1M+", label: "Forum Posts" },
+  { icon: Users, value: "1K+", label: "Community Members" },
+  { icon: MessageSquare, value: "100K+", label: "Forum Posts" },
   { icon: Trophy, value: "500+", label: "Active Challenges" },
   { icon: Calendar, value: "100+", label: "Monthly Events" }
 ];

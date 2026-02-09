@@ -8,9 +8,9 @@ import { Star, Quote } from "lucide-react";
 const reviews = [
   {
     id: 1,
-    name: "Alex Thompson",
-    role: "League Organizer",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    name: "Mohamed Saman",
+    role: "App Developer",
+    avatar: "/images/saman.jpg",
     content: "Sportynix made running our local indoor league effortless — scheduling, results, and communication all in one place.",
     rating: 5
   },
